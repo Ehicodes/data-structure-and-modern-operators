@@ -63,8 +63,14 @@ console.log(x, y, z);
 const [starter, main] = restaurant.order(2, 0);
 console.log(starter, main);
 
+//Nested Destructuring
 //what happens if we have a nested array?
 const nested = [12, 4, [5, 6]];
 //👇🏻
 const [i, , [j, k]] = nested;
 console.log(i, j, k);
+
+//Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+// const [p = 1, q = 1, r = 1] = [8];
+console.log(p, q, r);
