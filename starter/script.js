@@ -62,3 +62,9 @@ console.log(x, y, z);
 //Receive 2 return values from a function using destructuring
 const [starter, main] = restaurant.order(2, 0);
 console.log(starter, main);
+
+//what happens if we have a nested array?
+const nested = [12, 4, [5, 6]];
+//👇🏻
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
