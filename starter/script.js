@@ -59,9 +59,16 @@ const { name, openingHours, categories } = restaurant;
 const {
   name: restaurantName,
   openingHours: hours,
-  categories: tasks,
+  categories: tags,
 } = restaurant;
-console.log(restaurantName, hours, tasks);
+console.log(restaurantName, hours, tags);
+
+//another  useful for when dealing with third party data
+//e.g reading a property that does not exist in a object
+
+//we can set default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
 
 /*
 //DESTRUCTURING AN ARRAY
