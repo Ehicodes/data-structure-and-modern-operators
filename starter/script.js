@@ -48,8 +48,21 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  //Practical Application  of Destructuring
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 //Destructuring Objects
 
 const { name, openingHours, categories } = restaurant;
@@ -99,7 +112,7 @@ const c = arr[2];
  const [x, y, z] = arr;
 console.log(x, y, z);
 
- let [main, , secondary] = restaurant.categories;
+ let [main, , secondary] = restaurant.categories
 console.log(main, secondary);
 
 //Switching Variables
