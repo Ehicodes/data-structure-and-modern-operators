@@ -50,7 +50,12 @@ const restaurant = {
   },
 
   //Practical Application  of Destructuring
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
     console.log(
       `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
@@ -63,8 +68,32 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2,
 });
-//Destructuring Objects
 
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
+
+//THE SPREAD OPERATOR (...)
+const arr = [7, 8, 9];
+//using the spread operator to add new elements to an array
+
+const newArr = [1, 2, ...arr];
+console.log(...newArr); // 1 2 7 8 9
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(...newMenu);
+
+//Two use cases of the spread operator
+//Copy Array(create shallow copies of array)
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+//Joining 2 arrays or more together
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+//Destructuring Objects
 const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
 
@@ -80,8 +109,8 @@ console.log(restaurantName, hours, tags);
 //e.g reading a property that does not exist in a object
 
 //we can set default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
 //Mutating Variables while destructuring objects
 let a = 111;
