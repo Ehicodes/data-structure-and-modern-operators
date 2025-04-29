@@ -83,6 +83,12 @@ const obj = {
 ({ a, b } = obj);
 console.log(a, b);
 
+//Nested Objects
+const {
+  fri: { open: welcome, close: goodbye },
+} = openingHours;
+console.log(welcome, goodbye);
+
 /*
 //DESTRUCTURING AN ARRAY
  const arr = [2, 3, 4]; 
