@@ -66,6 +66,13 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  //rest parameter
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(`Here is your pizza made with ${mainIngredient}`);
+    console.log(
+      `Here is your pizza made with ${mainIngredient} and ${otherIngredients}`
+    );
+  },
 };
 //1) DESTRUCTURING
 
@@ -112,6 +119,9 @@ add(3, 4, 6, 6, 5, 3, 4);
 const x = [23, 5, 7];
 
 add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'Olives', 'spinach');
+
 /*
 ////////////////////////////////////
 // //THE SPREAD OPERATOR (...)
