@@ -99,7 +99,21 @@ console.log(sat, weekdays);
 // });
 
 //2) FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
 
+add(2, 3);
+add(2, 3, 7, 2);
+add(3, 4, 6, 6, 5, 3, 4);
+
+const x = [23, 5, 7];
+
+add(...x);
+/*
+////////////////////////////////////
 // //THE SPREAD OPERATOR (...)
 // const arr = [7, 8, 9];
 // //using the spread operator to add new elements to an array
