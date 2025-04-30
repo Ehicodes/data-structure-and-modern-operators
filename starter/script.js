@@ -67,106 +67,126 @@ const restaurant = {
     );
   },
 };
+//1) DESTRUCTURING
 
-restaurant.orderDelivery({
-  time: '23:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+//SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
 
-restaurant.orderDelivery({
-  address: 'Via del Sole, 21',
-  starterIndex: 1,
-});
+//REST, because on the LEFT side of the =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
 
-//THE SPREAD OPERATOR (...)
-const arr = [7, 8, 9];
-//using the spread operator to add new elements to an array
-
-const newArr = [1, 2, ...arr];
-console.log(...newArr); // 1 2 7 8 9
-
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(...newMenu);
-
-//Two use cases of the spread operator
-//Copy Array(create shallow copies of array)
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
-
-//Joining 2 arrays or more together
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
-
-//Iterables: arrays, strings, maps, sets, NOT objects
-const str = 'Ehi';
-const letters = [...str, ' ', 'O.'];
-console.log(letters);
-console.log(...str);
-
-//using the spread operator to pass arguments to a function
-//Real world example
-const ingredients = [
-  // prompt("Let's  make pasta! Ingredient 1?"),
-  // prompt('Ingredient 2?'),
-  // prompt('Ingredient 3'),
+const [pizza, , rissoto, ...otherFoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
-console.log(ingredients);
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); //old way
-
-restaurant.orderPasta(...ingredients); //new way
+console.log(pizza, rissoto, otherFoods);
 
 //objects
-const newRestaurant = { foundedIn: 1986, ...restaurant, founder: 'Guiseppe' }; //we created a new object
-console.log(newRestaurant);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+// restaurant.orderDelivery({
+//   time: '23:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-//copying objects using (...)
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
-console.log(restaurantCopy);
-console.log(restaurant);
+// restaurant.orderDelivery({
+//   address: 'Via del Sole, 21',
+//   starterIndex: 1,
+// });
 
-//Destructuring Objects
-const { name, openingHours, categories } = restaurant;
-// console.log(name, openingHours, categories);
+//2) FUNCTIONS
 
-//New variable names (helpful when dealing with third party data)
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// //THE SPREAD OPERATOR (...)
+// const arr = [7, 8, 9];
+// //using the spread operator to add new elements to an array
 
-//another  useful for when dealing with third party data
-//e.g reading a property that does not exist in a object
+// const newArr = [1, 2, ...arr];
+// console.log(...newArr); // 1 2 7 8 9
 
-//we can set default values
-// const { menu = [], starterMenu: starters = [] } = restaurant;
-// console.log(menu, starters);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(...newMenu);
 
-//Mutating Variables while destructuring objects
-let a = 111;
-let b = 999;
+// //Two use cases of the spread operator
+// //Copy Array(create shallow copies of array)
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-const obj = {
-  a: 23,
-  b: 7,
-  c: 14,
-};
+// //Joining 2 arrays or more together
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-({ a, b } = obj);
-console.log(a, b);
+// //Iterables: arrays, strings, maps, sets, NOT objects
+// const str = 'Ehi';
+// const letters = [...str, ' ', 'O.'];
+// console.log(letters);
+// console.log(...str);
 
-//Nested Objects
-const {
-  fri: { open: welcome, close: goodbye },
-} = openingHours;
-console.log(welcome, goodbye);
+// //using the spread operator to pass arguments to a function
+// //Real world example
+// const ingredients = [
+//   // prompt("Let's  make pasta! Ingredient 1?"),
+//   // prompt('Ingredient 2?'),
+//   // prompt('Ingredient 3'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); //old way
+
+// restaurant.orderPasta(...ingredients); //new way
+
+// //objects
+// const newRestaurant = { foundedIn: 1986, ...restaurant, founder: 'Guiseppe' }; //we created a new object
+// console.log(newRestaurant);
+
+// //copying objects using (...)
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+// console.log(restaurantCopy);
+// console.log(restaurant);
+
+// //Destructuring Objects
+// const { name, openingHours, categories } = restaurant;
+// // console.log(name, openingHours, categories);
+
+// //New variable names (helpful when dealing with third party data)
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// //another  useful for when dealing with third party data
+// //e.g reading a property that does not exist in a object
+
+// //we can set default values
+// // const { menu = [], starterMenu: starters = [] } = restaurant;
+// // console.log(menu, starters);
+
+// //Mutating Variables while destructuring objects
+// let a = 111;
+// let b = 999;
+
+// const obj = {
+//   a: 23,
+//   b: 7,
+//   c: 14,
+// };
+
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// //Nested Objects
+// const {
+//   fri: { open: welcome, close: goodbye },
+// } = openingHours;
+// console.log(welcome, goodbye);
 
 /*
 //DESTRUCTURING AN ARRAY
