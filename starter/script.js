@@ -60,6 +60,12 @@ const restaurant = {
       `Order Received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -93,6 +99,23 @@ console.log(mainMenuCopy);
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
+//Iterables: arrays, strings, maps, sets, NOT objects
+const str = 'Ehi';
+const letters = [...str, ' ', 'O.'];
+console.log(letters);
+console.log(...str);
+
+//using the spread operator to pass arguments to a function
+const ingredients = [
+  prompt("Let's  make pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3'),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); //old way
+
+restaurant.orderPasta(...ingredients); //new way
 //Destructuring Objects
 const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
