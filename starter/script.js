@@ -106,16 +106,30 @@ console.log(letters);
 console.log(...str);
 
 //using the spread operator to pass arguments to a function
+//Real world example
 const ingredients = [
-  prompt("Let's  make pasta! Ingredient 1?"),
-  prompt('Ingredient 2?'),
-  prompt('Ingredient 3'),
+  // prompt("Let's  make pasta! Ingredient 1?"),
+  // prompt('Ingredient 2?'),
+  // prompt('Ingredient 3'),
 ];
 console.log(ingredients);
 
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]); //old way
 
 restaurant.orderPasta(...ingredients); //new way
+
+//objects
+const newRestaurant = { foundedIn: 1986, ...restaurant, founder: 'Guiseppe' }; //we created a new object
+console.log(newRestaurant);
+
+//copying objects using (...)
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+console.log(restaurantCopy);
+console.log(restaurant);
+
 //Destructuring Objects
 const { name, openingHours, categories } = restaurant;
 // console.log(name, openingHours, categories);
