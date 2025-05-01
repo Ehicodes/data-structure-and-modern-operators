@@ -88,3 +88,7 @@ console.log(gk2, fieldPlayers2);
 //3
 const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
+
+//4
+const players1Final = [...firstTeam, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
