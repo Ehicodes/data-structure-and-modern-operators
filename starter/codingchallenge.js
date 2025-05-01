@@ -107,3 +107,11 @@ const printGoals = function (...numbersOfPlayers) {
 const gameScored = game.scored;
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals(...gameScored);
+
+//7
+const { team1, team2 } = game.odds;
+console.log(team1, team2);
+
+const moreLikelyToWin =
+  (team1 < team2 && 'Team 1') || (team2 < team1 && 'Team 2');
+console.log(`${moreLikelyToWin} is more likely to win`);
