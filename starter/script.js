@@ -68,14 +68,12 @@ const restaurant = {
   },
   //rest parameter
   orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(`Here is your pizza made with ${mainIngredient}`);
-    console.log(
-      `Here is your pizza made with ${mainIngredient} and ${otherIngredients}`
-    );
+    console.log(mainIngredient);
+    console.log(otherIngredients);
   },
 };
-//
-
+console.log('---- OR -----');
+//Logical operators use any data type, return any data, short-circuiting
 console.log(3 || 'Jonas'); // 3
 console.log('' || 'Jonas'); //jonas
 console.log(true || 0); //true
@@ -83,7 +81,7 @@ console.log(undefined || null); //null
 
 console.log(undefined || 0 || '' || 'Hello' || 3 || null);
 
-// restaurant.numGuests = 23;
+restaurant.numGuests = 0;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
 console.log(guests1);
 
@@ -91,6 +89,19 @@ console.log(guests1);
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
+console.log('---- AND -----');
+
+console.log(0 && 'Jonas'); //0
+console.log(7 && 'Jonas'); // Jonas
+console.log('Hello' && 23 && null && 'jonas'); //null
+
+//PRACTICAL EXAMPLE
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// AND OPERATOR
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 //1) DESTRUCTURING
 //SPREAD, because on RIGHT side of =
 // const arr = [1, 2, ...[3, 4]];
