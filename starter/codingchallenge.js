@@ -84,3 +84,7 @@ const [gk, ...fieldPlayers] = firstTeam;
 const [gk2, ...fieldPlayers2] = secondTeam;
 console.log(gk, fieldPlayers);
 console.log(gk2, fieldPlayers2);
+
+//3
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
