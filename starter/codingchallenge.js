@@ -92,3 +92,7 @@ console.log(allPlayers);
 //4
 const players1Final = [...firstTeam, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
+
+//5
+const { team1: teamOdd1, x: draw, team2: teamOdd2 } = game.odds;
+console.log(teamOdd1, draw, teamOdd2);
