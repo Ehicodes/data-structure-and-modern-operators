@@ -96,3 +96,14 @@ console.log(players1Final);
 //5
 const { team1: teamOdd1, x: draw, team2: teamOdd2 } = game.odds;
 console.log(teamOdd1, draw, teamOdd2);
+
+//6
+const printGoals = function (...numbersOfPlayers) {
+  console.log(...numbersOfPlayers);
+  for (let i = 0; i < numbersOfPlayers.length; i++) {
+    console.log(numbersOfPlayers.length);
+  }
+};
+const gameScored = game.scored;
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...gameScored);
