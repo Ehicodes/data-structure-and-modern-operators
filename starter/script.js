@@ -72,14 +72,28 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*
+/////////the nullish coalescing operator
+ restaurant.numGuests = 0;
+ const guests2 = restaurant.numGuests || 10;
+ console.log(guests2);
+//the nullish coalescing operator
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+
+/*
+////////////////////////////////////////////////
+// SHORT CIRCUITING (&& AND ||)
+
 console.log('---- OR -----');
 //Logical operators use any data type, return any data, short-circuiting
-console.log(3 || 'Jonas'); // 3
-console.log('' || 'Jonas'); //jonas
-console.log(true || 0); //true
-console.log(undefined || null); //null
+ console.log(3 || 'Jonas'); // 3
+ console.log('' || 'Jonas'); //jonas
+ console.log(true || 0); //true
+ console.log(undefined || null); //null
 
-console.log(undefined || 0 || '' || 'Hello' || 3 || null);
+ console.log(undefined || 0 || '' || 'Hello' || 3 || null);
 
 restaurant.numGuests = 0;
 const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
@@ -102,52 +116,57 @@ if (restaurant.orderPizza) {
 
 // AND OPERATOR
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+*/
+
+/*
 //1) DESTRUCTURING
 //SPREAD, because on RIGHT side of =
-// const arr = [1, 2, ...[3, 4]];
+ const arr = [1, 2, ...[3, 4]];
 
-// //REST, because on the LEFT side of the =
-// const [a, b, ...others] = [1, 2, 3, 4, 5];
-// console.log(a, b, others);
+//REST, because on the LEFT side of the =
+ const [a, b, ...others] = [1, 2, 3, 4, 5];
+ console.log(a, b, others);
 
-// const [pizza, , rissoto, ...otherFoods] = [
-//   ...restaurant.mainMenu,
-//   ...restaurant.starterMenu,
-// ];
+ const [pizza, , rissoto, ...otherFoods] = [
+   ...restaurant.mainMenu,
+   ...restaurant.starterMenu,
+ ];
 
-// console.log(pizza, rissoto, otherFoods);
+ console.log(pizza, rissoto, otherFoods);
 
-// //objects
-// const { sat, ...weekdays } = restaurant.openingHours;
-// console.log(sat, weekdays);
-// // restaurant.orderDelivery({
-// //   time: '23:30',
-// //   address: 'Via del Sole, 21',
-// //   mainIndex: 2,
-// //   starterIndex: 2,
-// // });
+//objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+ restaurant.orderDelivery({
+   time: '23:30',
+   address: 'Via del Sole, 21',
+  mainIndex: 2,
+   starterIndex: 2,
+ });
 
-// // restaurant.orderDelivery({
-// //   address: 'Via del Sole, 21',
-// //   starterIndex: 1,
-// // });
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+});
 
-// //2) FUNCTIONS
-// const add = function (...numbers) {
-//   let sum = 0;
-//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-//   console.log(sum);
-// };
+ //2) FUNCTIONS
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
 
-// add(2, 3);
-// add(2, 3, 7, 2);
-// add(3, 4, 6, 6, 5, 3, 4);
+add(2, 3);
+add(2, 3, 7, 2);
+add(3, 4, 6, 6, 5, 3, 4);
 
-// const x = [23, 5, 7];
+const x = [23, 5, 7];
 
-// add(...x);
+add(...x);
 
 // restaurant.orderPizza('mushrooms', 'onion', 'Olives', 'spinach');
+*/
 
 /*
 ////////////////////////////////////
