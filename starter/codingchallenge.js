@@ -74,13 +74,12 @@ const game = {
 // console.log(players1);
 
 const [players1, players2] = game.players;
-const firstTeam = [...players1];
 const secondTeam = [...players2];
 console.log(players1, players2);
-console.log(firstTeam, secondTeam);
+// console.log(players1, secondTeam);
 
 //2
-const [gk, ...fieldPlayers] = firstTeam;
+const [gk, ...fieldPlayers] = players1;
 const [gk2, ...fieldPlayers2] = secondTeam;
 console.log(gk, fieldPlayers);
 console.log(gk2, fieldPlayers2);
@@ -90,28 +89,30 @@ const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
 
 //4
-const players1Final = [...firstTeam, 'Thiago', 'Coutinho', 'Perisic'];
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
 
 //5
-const { team1: teamOdd1, x: draw, team2: teamOdd2 } = game.odds;
-console.log(teamOdd1, draw, teamOdd2);
+//TUTOR CODE CORRECTIONS
+//nested destructuring
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
 
 //6
+//TUTOR CODE CORRECTIONS
 const printGoals = function (...numbersOfPlayers) {
-  console.log(...numbersOfPlayers);
-  for (let i = 0; i < numbersOfPlayers.length; i++) {
-    console.log(numbersOfPlayers.length);
-  }
+  console.log(`${numbersOfPlayers.length} goals were scored`);
 };
-const gameScored = game.scored;
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-printGoals(...gameScored);
+printGoals('Coman', 'Pavard', 'Goretzka');
+printGoals(...game.scored);
 
 //7
-const { team1, team2 } = game.odds;
-console.log(team1, team2);
-
-const moreLikelyToWin =
-  (team1 < team2 && 'Team 1') || (team2 < team1 && 'Team 2');
-console.log(`${moreLikelyToWin} is more likely to win`);
+//TUTOR CODE
+team1 < team2 && console.log('Team 1 is likely to win');
+team2 < team1 && console.log('Team 2 is likely to win');
+// const moreLikelyToWin =
+//   (team1 < team2 && 'Team 1') || (team2 < team1 && 'Team 2');
+// console.log(`${moreLikelyToWin} is more likely to win`);
