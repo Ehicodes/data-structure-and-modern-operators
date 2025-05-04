@@ -11,13 +11,12 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${2 + 4}`]: {
+  [weekDays[5]]: {
     open: 0, //Open 24 hours
     close: 24,
   },
 };
 
-console.log(openingHours);
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -50,6 +49,23 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+//WITH OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.openingHours.fri?.open);
+
+//EXAMPLE
+const days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  // restaurant.openingHours[day]  same as openingHours.mon  openingHours.tues
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
 
 //FOR LOOP
 
