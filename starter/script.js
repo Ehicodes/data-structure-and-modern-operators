@@ -67,6 +67,8 @@ for (const day of days) {
   console.log(`On ${day}, we open at ${open}`);
 }
 
+//CALLING METHODS
+console.log(restaurant.orderRissoto?.(0, 1) ?? 'method does not exist');
 //FOR LOOP
 
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
