@@ -62,6 +62,19 @@ for (const day of properties) {
 
 console.log(openStr);
 
+//PROPERTY VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+//ENTIRE OBJECT
+//ENTRIES
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`on the ${key} we open at ${open} and close at ${close}`);
+}
+
 /*
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
