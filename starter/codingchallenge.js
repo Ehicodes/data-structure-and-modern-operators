@@ -148,4 +148,10 @@ for (const [i, el] of game.scored.entries()) {
 }
 
 //2
-
+const gameOdds = Object.values(game.odds);
+let sum = 0;
+for (const odds of gameOdds) {
+  sum += odds;
+}
+const average = sum / gameOdds.length;
+console.log(average);
