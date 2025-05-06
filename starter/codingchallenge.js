@@ -115,8 +115,7 @@ const game = {
 //   (team1 < team2 && 'Team 1') || (team2 < team1 && 'Team 2');
 // console.log(`${moreLikelyToWin} is more likely to win`);
 
-/*
-
+/*///////////////////
 Coding Challenge #2
 Let's continue with our football betting app! Keep using the 'game' variable from
 before.
@@ -155,3 +154,15 @@ for (const odds of gameOdds) {
 }
 const average = sum / gameOdds.length;
 console.log(average);
+
+//3
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+console.log(`Odd of victory ${game.team1}: ${team1}`);
+console.log(`Odd of draw: ${draw}`);
+console.log(`Odd of victory ${game.team2}: ${team2}`);
