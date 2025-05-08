@@ -149,9 +149,7 @@ for (const [i, el] of game.scored.entries()) {
 //2
 const gameOdds = Object.values(game.odds);
 let sum = 0;
-for (const odds of gameOdds) {
-  sum += odds;
-}
+for (const odds of gameOdds) sum += odds;
 const average = sum / gameOdds.length;
 console.log(average);
 
@@ -159,10 +157,18 @@ console.log(average);
 // Odd of victory Bayern Munich: 1.33
 // Odd of draw: 3.25
 // Odd of victory Borrussia Dortmund: 6.5
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
 
-console.log(`Odd of victory ${game.team1}: ${team1}`);
-console.log(`Odd of draw: ${draw}`);
-console.log(`Odd of victory ${game.team2}: ${team2}`);
+// console.log(`Odd of victory ${game.team1}: ${team1}`);
+// console.log(`Odd of draw: ${draw}`);
+// console.log(`Odd of victory ${game.team2}: ${team2}`);
+
+//TUTOR'S CODE
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}  ${odd}`);
+}
+
+//4. BONUS
