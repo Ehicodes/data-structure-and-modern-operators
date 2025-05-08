@@ -370,3 +370,19 @@ ordersSet.add('Garlic Bread'); //adding a new element to the set
 console.log(ordersSet);
 ordersSet.delete('Risotto'); //deleting an element
 console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+//Use case for sets. Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+//
+console.log(new Set('OsaigbovoEhinomen').size);
