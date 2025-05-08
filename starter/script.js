@@ -357,8 +357,16 @@ const ordersSet = new Set([
   'Pasta',
   'Pizza',
   'Pizza',
-  'Rissotto',
+  'Risotto',
   'Pasta',
   'Pizza',
 ]);
+console.log(ordersSet);
+console.log(new Set('Ehi'));
+console.log(ordersSet.size); //checking the size.
+console.log(ordersSet.has('Bread'));
+console.log(ordersSet.has('Pizza')); //checking if an element is in the set
+ordersSet.add('Garlic Bread'); //adding a new element to the set
+console.log(ordersSet);
+ordersSet.delete('Risotto'); //deleting an element
 console.log(ordersSet);
