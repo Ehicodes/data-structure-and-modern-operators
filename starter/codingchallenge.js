@@ -217,3 +217,10 @@ console.log(gameEvents);
 const average = 90 / 10;
 console.log(average);
 console.log(`An event happened, on average, every ${average} minutes`);
+
+//4
+for (const [time, event] of gameEvents) {
+  // console.log(time, event);
+  const str = time < 45 ? '[FIRST HALF]' : '[SECOND HALF]';
+  console.log(`${str} ${time}: ${event}`);
+}
