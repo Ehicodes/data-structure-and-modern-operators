@@ -174,6 +174,7 @@ Lewandowski: 2
 //4. BONUS
 
 /*///////////////////////////////
+Coding Challenge #3
 Let's continue with our football betting app! This time, we have a map called
 'gameEvents' (see below) with a log of the events that happened during the
 game. The values are the events themselves, and the keys are the minutes in which
@@ -207,3 +208,7 @@ const gameEvents = new Map([
 //1
 const events = [...new Set(gameEvents.values())];
 console.log(events);
+
+//2
+gameEvents.delete(64);
+console.log(gameEvents);
