@@ -214,8 +214,8 @@ gameEvents.delete(64);
 console.log(gameEvents);
 
 //3
-const average = 90 / 10;
-console.log(average);
+
+const average = 90 / gameEvents.size;
 console.log(`An event happened, on average, every ${average} minutes`);
 
 //4
