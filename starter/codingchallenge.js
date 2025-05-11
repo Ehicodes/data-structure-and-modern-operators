@@ -214,13 +214,25 @@ gameEvents.delete(64);
 console.log(gameEvents);
 
 //3
-
 const average = 90 / gameEvents.size;
 console.log(`An event happened, on average, every ${average} minutes`);
 
-//4
+//TUTOR CODE. BONUS
+const extraTime = [...gameEvents.keys()].pop();
+console.log(extraTime);
+console.log(
+  `An event happened, on average, every ${
+    extraTime / gameEvents.size
+  }   minutes`
+);
+
+4;
 for (const [time, event] of gameEvents) {
-  // console.log(time, event);
   const str = time < 45 ? '[FIRST HALF]' : '[SECOND HALF]';
   console.log(`${str} ${time}: ${event}`);
+}
+//TUTOR CODE
+for (const [min, event] of gameEvents) {
+  const half = min < 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${half} HALF] ${min} ${event}`);
 }
