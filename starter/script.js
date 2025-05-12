@@ -463,7 +463,22 @@ const plane = 'A320';
 console.log(airline.toLocaleLowerCase());
 console.log(airline.toUpperCase());
 
+//comparing emails
+const email = 'hello@ehi.o';
+const loginEmail = '  Hello@Ehi.O \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+const emailChecker = function (emails) {
+  console.log(emails === normalizedEmail);
+};
+const normalizedEmail = loginEmail.toLowerCase().trim();
+emailChecker('hello@ehi.o');
+emailChecker('hola@ehi.oe');
+// console.log(email === normalizedEmail);
 //fix capitalization in name
+
 const passenger = 'eHiNoMeN';
 const passengerLower = passenger.toLowerCase();
 const passengerCorrect =
