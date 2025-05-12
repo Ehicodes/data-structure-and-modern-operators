@@ -503,6 +503,21 @@ const plane2 = 'Airbus A320neo';
 if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
   console.log('Part of the NEW  Airbus family');
 }
+
+//Practice Exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
 /*WORKING WITH STRINGS -PART 1
 console.log(plane);
 console.log(plane[0]);
