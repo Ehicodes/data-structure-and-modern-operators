@@ -459,6 +459,18 @@ console.log(p, q, r);
 /*//////////////////////WORKING WITH STRINGS////////////////////////////////// */
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
+
+console.log(airline.toLocaleLowerCase());
+console.log(airline.toUpperCase());
+
+//fix capitalization in name
+const passenger = 'eHiNoMeN';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+/*WORKING WITH STRINGS -PART 1
 console.log(plane);
 console.log(plane[0]);
 console.log('B737'[0]);
@@ -486,3 +498,4 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+*/
