@@ -485,6 +485,24 @@ const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect);
 
+//replacing parts of strings
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boardin door 23!';
+
+// console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+
+//Booleans
+const plane2 = 'Airbus A320neo';
+// console.log(plane.includes('A320'));
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the NEW  Airbus family');
+}
 /*WORKING WITH STRINGS -PART 1
 console.log(plane);
 console.log(plane[0]);
