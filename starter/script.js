@@ -456,7 +456,31 @@ console.log(p, q, r);
 // console.log(question.values());
 // console.log(question.entries());
 
-/*//////////////////////WORKING WITH STRINGS////////////////////////////////// */
+/*WORKING WITH STRINGS PART 3/////////////// */
+//split and join
+console.log('a+very+nice+string'.split('+'));
+console.log('Osaigbovo Ehinomen'.split(' '));
+
+const [firstName, lastName] = 'Osaigbovo Ehinomen'.split(' ');
+console.log(firstName, lastName);
+
+const newName = ['Miss.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+//example
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('osaigbovo ehinomen');
+/*//////////////////////WORKING WITH STRINGS PART 2////////////////////////////////// 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
@@ -518,7 +542,8 @@ checkBaggage('I have a laptop, some food and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
 
-/*WORKING WITH STRINGS -PART 1
+*/
+/*/////////WORKING WITH STRINGS -PART 1///////////
 console.log(plane);
 console.log(plane[0]);
 console.log('B737'[0]);
