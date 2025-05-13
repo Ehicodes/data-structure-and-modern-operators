@@ -480,6 +480,22 @@ const capitalizeName = function (name) {
 
 capitalizeName('jessica ann smith davis');
 capitalizeName('osaigbovo ehinomen');
+
+//padding a string
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Ehi'.padStart(20, '+').padEnd(30, '+'));
+
+//real world example of padding
+const maskedCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  console.log(str, last);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskedCreditCard(4378405356265));
+console.log(maskedCreditCard('847348830284687620'));
 /*//////////////////////WORKING WITH STRINGS PART 2////////////////////////////////// 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
