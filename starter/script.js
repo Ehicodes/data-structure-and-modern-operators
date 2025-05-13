@@ -496,6 +496,18 @@ const maskedCreditCard = function (number) {
 
 console.log(maskedCreditCard(4378405356265));
 console.log(maskedCreditCard('847348830284687620'));
+
+///repeat
+const message2 = 'Bad weather... All Departures Delayed...';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
 /*//////////////////////WORKING WITH STRINGS PART 2////////////////////////////////// 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
