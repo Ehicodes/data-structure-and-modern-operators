@@ -456,7 +456,7 @@ console.log(p, q, r);
 // console.log(question.values());
 // console.log(question.entries());
 
-/*WORKING WITH STRINGS PART 3/////////////// */
+/*WORKING WITH STRINGS PART 3/////////////// 
 //split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Osaigbovo Ehinomen'.split(' '));
@@ -508,6 +508,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 /*//////////////////////WORKING WITH STRINGS PART 2////////////////////////////////// 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';

@@ -265,3 +265,29 @@ name conversion working 😉
 you're stuck. Then pause and continue!
 Afterwards, test with your own test data!
 */
+
+document.body.append(document.createElement('textarea'));
+
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+
+  const rows = text.split('\n');
+
+  for (const row of rows) {
+    const [first, second] = row.trim().toLowerCase().split('_');
+
+    const ouput = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(ouput);
+  }
+});
+
+// underscore_case
+// first_name
+// Some_Variable
+// calculate_AGE
+// delayed_departure
