@@ -217,7 +217,7 @@ const gameEvents = new Map([
 // const average = 90 / gameEvents.size;
 // console.log(`An event happened, on average, every ${average} minutes`);
 
-//TUTOR CODE. BONUS
+//TUTOR'S CODE. BONUS
 // const extraTime = [...gameEvents.keys()].pop();
 // console.log(extraTime);
 // console.log(
@@ -231,7 +231,7 @@ const gameEvents = new Map([
 //   const str = time < 45 ? '[FIRST HALF]' : '[SECOND HALF]';
 //   console.log(`${str} ${time}: ${event}`);
 // }
-//TUTOR CODE
+//TUTOR'S CODE
 // for (const [min, event] of gameEvents) {
 //   const half = min < 45 ? 'FIRST' : 'SECOND';
 //   console.log(`[${half} HALF] ${min} ${event}`);
@@ -266,25 +266,26 @@ you're stuck. Then pause and continue!
 Afterwards, test with your own test data!
 */
 
-document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('textarea'));
 
-document.body.append(document.createElement('button'));
+// document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function () {
-  const text = document.querySelector('textarea').value;
-  const rows = text.split('\n');
-  for (const [i, row] of rows.entries()) {
-    const [first, second] = row.toLowerCase().trim().split('_');
-    const output = `${first}${second.replace(
-      second[0],
-      second[0].toUpperCase()
-    )}`;
-    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
-  }
-});
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
 
-// underscore_case
-// first_name
-// Some_Variable
-// calculate_AGE
-// delayed_departure
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// });
+
+// underscore_case;
+// first_name;
+// Some_Variable;
+// calculate_AGE;
+// delayed_departure;
